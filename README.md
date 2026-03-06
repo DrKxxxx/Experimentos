@@ -27,3 +27,38 @@ To perform the complete simulation, follow these steps:
 2. **Attack**: Run `cipher.py` to simulate data hijacking.
 3. **Verification**: Check that the files are now unreadable and that a `key.key` has been generated.
 4. **Recovery**: Use the `key.key` with `decryptor.py` to restore the original data.
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+## 🛡️ Fase 2: Simulación de Intrusión y Persistencia
+
+En esta etapa del experimento, se simula el compromiso de un servidor mediante técnicas de fuerza bruta y el establecimiento de una conexión persistente.
+
+### Herramientas desarrolladas:
+* **worn.py**: Script de automatización que realiza escaneo de puertos (22 SSH) y ataque de diccionario.
+* **Persistencia Invisible**: Implementación de un backdoor mediante un script oculto en `.local/` vinculado al `.bashrc`.
+* **Técnica de Desacople**: Uso de `setsid` y redirección de errores a `/dev/null` para garantizar que la terminal de la víctima no se bloquee ni se cierre al iniciar la conexión.
+
+### Flujo del Experimento:
+1. Escaneo de la red local en busca de objetivos.
+2. Ataque de fuerza bruta hasta obtener las credenciales del usuario.
+3. Despliegue del payload de persistencia.
+4. Recepción de la Reverse Shell en Kali Linux mediante Netcat.
+---------------------------------------------------------------------------
+## 🛡️ Phase 2: Intrusion and Persistence Simulation
+
+In this stage of the experiment, server compromise is simulated using brute force techniques and the establishment of a persistent connection.
+
+### Tools developed:
+* **worn.py**: Automation script that performs port scanning (22 SSH) and dictionary attacks.
+* **Invisible Persistence**: Implementation of a backdoor using a hidden script in `.local/` linked to `.bashrc`.
+* **Decoupling Technique**: Use of `setsid` and error redirection to `/dev/null` to ensure that the victim's terminal does not crash or close when the connection is initiated.
+
+### Experiment Flow:
+1. Scanning the local network for targets.
+2. Brute force attack until user credentials are obtained.
+3. Deployment of the persistence payload.
+4. Receipt of the Reverse Shell in Kali Linux using Netcat.
+
+Translated with DeepL.com (free version)
